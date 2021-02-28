@@ -11,8 +11,8 @@ app.use(express.json());
 // setup public folder for css, images, js, etc.
 app.use(express.static('public'));
 
-require("./routes/htmlRoutes")(app);
 require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // listener 
 app.listen(PORT, function() {

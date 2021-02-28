@@ -5,13 +5,12 @@ const { v4: uuidv4 } = require('uuid');
 
 const notes = [];
 
-
-function addId(){
-const noteId = notes.map(newId => {
-    newId.id = uuidv4();
-    return newId
-});
-};
+    function addId(){
+    const noteId = notes.map(newId => {
+        newId.id = uuidv4();
+        return newId
+    });
+    };
 
 module.exports =  function(app) {
 
@@ -20,14 +19,17 @@ app.get("/api/notes", function (req, res) {
     fs.readFile("./db/db.json",'utf-8', function(err, data) {
         if (err) {
             console.log(err)
-        };
+        } else {
         const notes = JSON.parse(data);
+        console.log(notes);
+        res.json(notes);
+        }
     }); 
-  console.log(notes);
 });
 
 // Recieves new note and add it to db.json. Returns new note to client.
 app.post("/api/notes", function (req, res) {
+    
     const newNote = req.body;
     notes.push(newNote);
     addId()
