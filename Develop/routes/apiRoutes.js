@@ -1,11 +1,10 @@
 // Api Routes
 const path = require("path");
-const storedData = require("../data/data");
-const newNote = require("../public/app");
+const noteListItems = require("../public/assets/js/index")
 
 module.exports =  function(app) {
 app.get("/api/notes", function (req, res) {
-    res.json(storedData);
+    res.json(noteListItems);
 });
 
 app.post("/api/notes", function (req, res) {
