@@ -1,5 +1,4 @@
 const express = require("express");
-const $ = require("jquery");
 const app = express();
 
 // setting up port
