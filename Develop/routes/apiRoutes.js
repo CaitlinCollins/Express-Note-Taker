@@ -1,14 +1,14 @@
 // Api Routes
 const path = require("path");
 const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
+
 const notes = [];
 
 
 function addId(){
 const noteId = notes.map(newId => {
-    for (i=0; i<notes.length; i++) {
-    newId.id = i++;
-    }
+    newId.id = uuidv4();
     return newId
 });
 };
