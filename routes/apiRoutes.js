@@ -21,7 +21,6 @@ app.get("/api/notes", function (req, res) {
             console.log(err)
         } else {
         const notes = JSON.parse(data);
-        console.log(notes);
         res.json(notes);
         }
     }); 
@@ -29,17 +28,36 @@ app.get("/api/notes", function (req, res) {
 
 // Recieves new note and add it to db.json. Returns new note to client.
 app.post("/api/notes", function (req, res) {
-    
+
     const newNote = req.body;
     notes.push(newNote);
-    addId()
+    addId();
 
     fs.writeFile("./db/db.json", JSON.stringify(notes), "utf-8", function(err) {
         if (err) {
             throw err
         };
+        console.log(notes);
     });
     res.json(notes);
 });
 
+app.delete("/api/notes/:id", function (req, res) {
+    fs.readFile("./db/db.json",'utf-8', function(err, data) {
+        if (err) {
+            console.log(err)
+        } else {
+        const chosen = req.params.id;
+        const remainingNotes = notes.filter(data => data.id != chosen);
+   
+    fs.writeFile("./db/db.json", JSON.stringify(remainingNotes), "utf-8", function(err) {
+        if (err) {
+            throw err
+        };
+    });
+
+    res.json(remainingNotes);
+}
+}); 
+});
 };
