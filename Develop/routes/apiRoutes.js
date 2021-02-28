@@ -14,28 +14,19 @@ const noteId = notes.map(newId => {
 };
 
 module.exports =  function(app) {
+
 // Gets all the notes from the db.json.
-
-// const getNotes = () => {
-//     return $.ajax({
-//       url: "/api/notes",
-//       method: "GET",
-//     });
-//   };
-
 app.get("/api/notes", function (req, res) {
-    // res.json(true);
+    fs.readFile("./db/db.json",'utf-8', function(err, data) {
+        if (err) {
+            console.log(err)
+        };
+        const notes = JSON.parse(data);
+    }); 
+  console.log(notes);
 });
 
 // Recieves new note and add it to db.json. Returns new note to client.
-// const saveNote = (note) => {
-//     return $.ajax({
-//       url: "/api/notes",
-//       data: note,
-//       method: "POST",
-//     });
-//   };
-
 app.post("/api/notes", function (req, res) {
     const newNote = req.body;
     notes.push(newNote);
@@ -48,15 +39,5 @@ app.post("/api/notes", function (req, res) {
     });
     res.json(notes);
 });
+
 };
-
-
-
-// fs.readFile('../db/db.json', 'utf-8', function(err, data) {
-// 	if (err) {
-//         throw err
-//     };
-// 	const storedData = JSON.parse(data);
-//     storedData.push(noteListItems);
-// });
-
