@@ -3,17 +3,15 @@ const path = require("path");
 const fs = require('fs');
 const notes = [];
 
-// let sum = 0;
-// function addId() {
-//     notes.forEach(newId);
-//     newId();
-// }
 
-// function newId(){
-//     sum += 1
-//     notes.id = sum;
-// }
-
+function addId(){
+const noteId = notes.map(newId => {
+    for (i=0; i<notes.length; i++) {
+    newId.id = i++;
+    }
+    return newId
+});
+};
 
 module.exports =  function(app) {
 // Gets all the notes from the db.json.
@@ -41,7 +39,7 @@ app.get("/api/notes", function (req, res) {
 app.post("/api/notes", function (req, res) {
     const newNote = req.body;
     notes.push(newNote);
-    // addId()
+    addId()
 
     fs.writeFile("./db/db.json", JSON.stringify(notes), "utf-8", function(err) {
         if (err) {
