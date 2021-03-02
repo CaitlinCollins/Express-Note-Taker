@@ -47,8 +47,10 @@ app.delete("/api/notes/:id", function (req, res) {
         if (err) {
             console.log(err)
         } else {
+        const newData = JSON.parse(data);
         const chosen = req.params.id;
-        const remainingNotes = notes.filter(data => data.id != chosen);
+        console.log(data);
+        const remainingNotes = newData.filter(data => data.id != chosen);
    
     fs.writeFile("./db/db.json", JSON.stringify(remainingNotes), "utf-8", function(err) {
         if (err) {
