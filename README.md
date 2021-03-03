@@ -38,17 +38,18 @@
   
   ### Input Note
   
-  ![note1](https://github.com/CaitlinCollins/Template-Engine/blob/main/Assets/teambuild1.png)
+  ![note1](https://github.com/CaitlinCollins/Express-Note-Taker/blob/main/public/assets/screenshots/note1.png)
   
   ### Save Note
   
-  ![note2](https://github.com/CaitlinCollins/Template-Engine/blob/main/Assets/teambuild2.png)
+  ![note2](https://github.com/CaitlinCollins/Express-Note-Taker/blob/main/public/assets/screenshots/note2.png)
   
   ### Delete Note
-  ![note3]()
+  ![note3](https://github.com/CaitlinCollins/Express-Note-Taker/blob/main/public/assets/screenshots/note3.png)
 
   ## License
   This project is protected under the MIT license.
+  
   ## Contact
   GitHub: @CaitlinCollins
 
