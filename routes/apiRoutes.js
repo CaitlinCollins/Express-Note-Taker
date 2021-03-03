@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
-const notes = [];
+let notes = [];
 
     function addId(){
     const noteId = notes.map(newId => {
@@ -28,11 +28,10 @@ app.get("/api/notes", function (req, res) {
 
 // Recieves new note and add it to db.json. Returns new note to client.
 app.post("/api/notes", function (req, res) {
-
     const newNote = req.body;
     notes.push(newNote);
     addId();
-
+    
     fs.writeFile("./db/db.json", JSON.stringify(notes), "utf-8", function(err) {
         if (err) {
             throw err
@@ -42,6 +41,7 @@ app.post("/api/notes", function (req, res) {
     res.json(notes);
 });
 
+// Deletes selected note by note id. Resets notes array with remainingNotes. 
 app.delete("/api/notes/:id", function (req, res) {
     fs.readFile("./db/db.json",'utf-8', function(err, data) {
         if (err) {
@@ -51,6 +51,7 @@ app.delete("/api/notes/:id", function (req, res) {
         const chosen = req.params.id;
         console.log(data);
         const remainingNotes = newData.filter(data => data.id != chosen);
+        notes = remainingNotes;
    
     fs.writeFile("./db/db.json", JSON.stringify(remainingNotes), "utf-8", function(err) {
         if (err) {
