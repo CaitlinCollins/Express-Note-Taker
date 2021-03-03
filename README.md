@@ -3,21 +3,21 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
   ## Table of Contents
-  [Description](https://github.com//#description)
+  [Description](https://github.com/CaitlinCollins/Express-Note-Taker#description)
 
-  [Installation](https://github.com//#installation)
+  [Installation](https://github.com/CaitlinCollins/Express-Note-Taker#installation)
 
-  [Usage](https://github.com//#usage)
+  [Usage](https://github.com/CaitlinCollins/Express-Note-Taker#usage)
 
-  [Contributing](https://github.com//#contributing)
+  [Contributing](https://github.com/CaitlinCollins/Express-Note-Taker#contributing)
 
-  [Tests](https://github.com//#tests)
+  [Tests](https://github.com/CaitlinCollins/Express-Note-Taker#tests)
   
-  [Screenshots](https://github.com/CaitlinCollins/ReadME#screenshots)
+  [Screenshots](https://github.com/CaitlinCollins/Express-Note-Taker#screenshots)
 
-  [License](https://github.com//#license)
+  [License](https://github.com/CaitlinCollins/Express-Note-Taker#license)
 
-  [Contact](https://github.com//#contact)
+  [Contact](https://github.com/CaitlinCollins/Express-Note-Taker#contact)
 
   ## Description
   This application can be used to write, save, and delete notes by utilizing an epress backend to save and retrieve note data from a JSON file. 
